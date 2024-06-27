@@ -1,0 +1,75 @@
+/* ViewCategory.css */
+
+.view-category-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.bk {
+    color: white;
+}
+
+.table-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.fruits-table {
+    width: 50%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.fruits-table th,
+.fruits-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.fruits-table th {
+    background-color: darkolivegreen;
+    text-align: center;
+}
+
+.fruits-table td {
+    text-align: center;
+    background-color: whitesmoke;
+}
+
+.add-fruit-form {
+    margin-top: 20px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-fruit-form .form-group {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.add-fruit-form label {
+    margin-right: 10px;
+}
+
+.add-fruit-form input {
+    padding: 8px;
+    width: calc(100% - 20px);
+}
+
+.add-fruit-form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.add-fruit-form button:hover {
+    background-color: #45a049;
+}

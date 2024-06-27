@@ -1,0 +1,71 @@
+/* Styling for user layout */
+
+.user-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-image: url('../assets/user.jpg');
+    /* Add this line to set the background image */
+    background-size: cover;
+    /* Ensure the image covers the entire container */
+    background-position: center;
+    /* Center the background image */
+    background-repeat: no-repeat;
+}
+
+
+/* Styling for navbar */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 10px 20px;
+}
+
+.navbar-left {
+    display: flex;
+}
+
+.navbar-items {
+    list-style: none;
+    display: flex;
+    /* margin: 0; */
+    padding: 0;
+    margin-left: 900px;
+}
+
+.navbar-items li {
+    margin-right: 20px;
+}
+
+.navbar-items li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar-items li a:hover {
+    color: red;
+}
+
+.navbar-right button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.navbar-right button:hover {
+    background-color: #c82333;
+}
+
+.user-content {
+    flex: 1;
+    padding: 20px;
+    /* background-color: #f8f9fa; */
+}

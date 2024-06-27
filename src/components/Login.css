@@ -1,0 +1,153 @@
+/* Styling for login container */
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('../assets/hero.jpg');
+    /* Gradient background */
+}
+
+
+/* Styling for login header */
+
+.login-header {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* White background with transparency */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    /* Box shadow for depth */
+    width: 300px;
+    height: 290px;
+    /* Limit width to improve responsiveness */
+}
+
+
+/* Styling for login header title */
+
+.login-header h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #333333;
+    /* Dark text color */
+}
+
+
+/* Styling for login form */
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    /* margin: 0px 0px 0px -10px; */
+    /* Center form items */
+}
+
+
+/* Styling for form group */
+
+.form-group {
+    margin-bottom: 15px;
+    width: 90%;
+    /* Full width for form inputs */
+}
+
+
+/* Styling for labels */
+
+label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+    color: #555555;
+    padding-right: 280px;
+    /* Medium dark text color */
+    /* text-align: left; */
+    /* Align label text to left */
+}
+
+
+/* Styling for form inputs */
+
+.form-control {
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #dddddd;
+    /* Light gray border */
+    margin: 0px 0px 0px -10px;
+    border-radius: 4px;
+}
+
+
+/* Styling for login button */
+
+.btn-login {
+    background: linear-gradient(to right, #007bff, #0056b3);
+    /* Gradient background for button */
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    /* Smooth transition for background color */
+    width: 50%;
+    /* Full width for button */
+    max-width: 100%;
+    /* Limit max width to container */
+}
+
+
+/* Styling for login button on hover */
+
+.btn-login:hover {
+    background: linear-gradient(to right, #0056b3, #003a75);
+    /* Darker shade on hover */
+}
+
+
+/* Styling for login message */
+
+.login-message {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #dc3545;
+    /* Bootstrap danger color */
+    text-align: center;
+    /* Center align message */
+}
+
+.password-input {
+    position: relative;
+    /* width: 93%; */
+}
+
+.password-input .form-control {
+    width: calc(110% - 30px);
+    /* Adjust based on your design */
+    padding-right: 40px;
+    /* Space for the eye icon button */
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.toggle-password svg {
+    width: 20px;
+    height: auto;
+}
+
+.toggle-password.active svg {
+    color: #007bff;
+    /* Example color for active state */
+}

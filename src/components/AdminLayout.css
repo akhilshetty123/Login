@@ -1,0 +1,86 @@
+.admin-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-image: url('../assets/adm.jpg');
+    /* Add this line to set the background image */
+    background-size: cover;
+    /* Ensure the image covers the entire container */
+    background-position: center;
+    /* Center the background image */
+    background-repeat: no-repeat;
+    /* Prevent the background image from repeating */
+}
+
+.navbar {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-items {
+    list-style: none;
+    padding: 0;
+    margin: 10px;
+    display: flex;
+    margin-left: 900px;
+}
+
+.navbar-items li {
+    margin-right: 20px;
+}
+
+.navbar-items li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.navbar-icon {
+    margin-top: 0px;
+    margin-right: 0px;
+    width: 100px;
+    cursor: pointer;
+}
+
+.navbar-items li a:hover {
+    color: red;
+}
+
+.navbar button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0px 50px 0px 0px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.navbar button:hover {
+    background-color: #c82333;
+}
+
+.admin-content {
+    padding: 20px;
+    flex-grow: 1;
+    overflow-y: auto;
+}

@@ -1,0 +1,82 @@
+.dashboard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    /* Adjust height as needed */
+}
+
+.content {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    margin-top: 200px;
+    /* Adjust margin-top to center content */
+    text-align: center;
+    width: 80%;
+    max-width: 500px;
+}
+
+.add-item-form,
+.item-list {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+}
+
+.btn-add,
+.toggle-btn {
+    background-color: #007bff;
+    /* Bootstrap primary color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-add:hover,
+.toggle-btn:hover {
+    background-color: #0056b3;
+    /* Darker blue on hover */
+}
+
+.add-message {
+    color: green;
+    margin-top: 10px;
+}
+
+.items-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.items-table th,
+.items-table td {
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    text-align: left;
+}
+
+.items-table th {
+    background-color: #e9ecef;
+}
