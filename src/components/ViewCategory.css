@@ -9,7 +9,7 @@
 }
 
 .bk {
-    color: white;
+    color: black;
 }
 
 .table-wrapper {
@@ -31,8 +31,9 @@
 }
 
 .fruits-table th {
-    background-color: darkolivegreen;
+    background-color: #333;
     text-align: center;
+    color: white;
 }
 
 .fruits-table td {
