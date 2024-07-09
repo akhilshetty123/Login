@@ -1,15 +1,54 @@
-/* ViewCategory.css */
-
 .view-category-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    background-color: lightslategray;
     display: flex;
     flex-direction: column;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
-    margin-top: 20px;
+    padding: 0 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.navbar-icon {
+    height: 50px;
+}
+
+.navbar-left ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.navbar-left ul li {
+    margin-right: 20px;
+}
+
+.navbar-left ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar-right button {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
 }
 
 .bk {
     color: black;
+    padding-left: 700px;
+    /* padding: 1px 0px 0px 680px; */
+    /* margin-top: 0px;
+    margin-left: 680px; */
 }
 
 .table-wrapper {

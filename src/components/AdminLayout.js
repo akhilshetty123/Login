@@ -1,14 +1,17 @@
 import React from 'react';
 import { Link, Routes, Route, useNavigate } from 'react-router-dom';
 import Dashboard from './Add-item';
-import ViewItems from './ViewItems';
+import ViewItems from './View-items';
+import ViewOrders from './ViewOrders';
+import Home from './Home';
 import './AdminLayout.css';
 import backgroundImage from '../assets/adm.jpg';
 
-function AdminLayout({ onLogout, items, addItem, setItems }) {
+function AdminLayout({ onLogout, items, addItem, setItems, orders }) {
   const navigate = useNavigate();
 
   const handleLogout = () => {
+    localStorage.removeItem('currentUser');
     onLogout();
     navigate('/');
   };
@@ -19,8 +22,10 @@ function AdminLayout({ onLogout, items, addItem, setItems }) {
         <img src="/images/loginnnn.jpg" alt="Dashboard" className="navbar-icon" />
         <div className="navbar-left">
           <ul className="navbar-items">
-            <li><Link to="/admin/Add-items">Add-Item</Link></li>
-            <li><Link to="/admin/View-items">View-Item</Link></li>
+            <li><Link to="/admin">Home</Link></li>
+            <li><Link to="/Add-item">Add-Item</Link></li>
+            <li><Link to="/View-item">View-Item</Link></li>
+            <li><Link to="/View-orders">View-Orders</Link></li>
           </ul>
         </div>
         <div className="navbar-right">
@@ -29,8 +34,10 @@ function AdminLayout({ onLogout, items, addItem, setItems }) {
       </nav>
       <div className="admin-content">
         <Routes>
-          <Route path="Add-items" element={<Dashboard items={items} addItem={addItem} />} />
-          <Route path="View-items" element={<ViewItems items={items} setItems={setItems} isAdmin={true} />} />
+          <Route path="/" element={<Home items={items} orders={orders} />} />
+          <Route path="/Add-item" element={<Dashboard items={items} addItem={addItem} />} />
+          <Route path="/View-item" element={<ViewItems items={items} setItems={setItems} isAdmin={true} />} />
+          <Route path="/View-orders" element={<ViewOrders orders={orders} onLogout={handleLogout} />} />
         </Routes>
       </div>
     </div>

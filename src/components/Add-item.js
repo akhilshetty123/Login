@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import './Dashboard.css';
+import { Link, useNavigate } from 'react-router-dom';
+import './Add-item.css';
 
-function Dashboard({ items, addItem, updateItem, currentItem }) {
+function AddItem({ items = [], addItem, updateItem, currentItem, onLogout }) {
   const [productName, setProductName] = useState('');
   const [price, setPrice] = useState('');
   const [message, setMessage] = useState('');
   const [isEditing, setIsEditing] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (currentItem) {
@@ -23,7 +25,7 @@ function Dashboard({ items, addItem, updateItem, currentItem }) {
     }
 
     const newItem = {
-      id: items.length + 1,
+      id: (items ? items.length : 0) + 1, 
       productName,
       price: parseFloat(price),
     };
@@ -56,8 +58,30 @@ function Dashboard({ items, addItem, updateItem, currentItem }) {
     setMessage('');
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('currentUser');
+    onLogout();
+    navigate('/');
+  };
+
   return (
     <div className="dashboard-container">
+      <nav className="navbar">
+        <img src="/images/loginnnn.jpg" alt="Dashboard" className="navbar-icon" />
+        <div className="navbar-left">
+          <ul className="navbar-items">
+            <li><Link to="/admin">Home</Link></li>
+            <li><Link to="/Add-item">Add-Item</Link></li>
+            <li><Link to="/View-item">View-Item</Link></li>
+            <li><Link to="/View-Orders">View-Orders</Link></li>
+          </ul>
+        </div>
+        <div className="navbar-right">
+          <button onClick={handleLogout}>Logout</button>
+        </div>
+      </nav>
+
+      
       <div className="content">
         <h2>{isEditing ? 'Edit Item' : 'Add Item'}</h2>
         <form onSubmit={isEditing ? handleUpdateItem : handleAddItem}>
@@ -71,7 +95,7 @@ function Dashboard({ items, addItem, updateItem, currentItem }) {
               className="form-control"
               placeholder="Enter product name"
               required
-              disabled={isEditing} // Disable editing of product name
+              disabled={isEditing} 
             />
           </div>
           <div className="form-group">
@@ -95,4 +119,4 @@ function Dashboard({ items, addItem, updateItem, currentItem }) {
   );
 }
 
-export default Dashboard;
+export default AddItem;

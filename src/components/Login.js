@@ -1,5 +1,7 @@
+// Login.js
+
 import React, { useState } from 'react';
-import './Login.css'; // Import CSS for styling
+import './Login.css'; 
 import { useNavigate } from 'react-router-dom'; // Import useNavigate hook from react-router-dom
 import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Import icons from react-icons library
 import backgroundImage from '../assets/hero.jpg';
@@ -16,14 +18,14 @@ function Login({ onLogin }) {
 
     if (username === adminCredentials.username && password === adminCredentials.password) {
       setMessage('Admin login successful!');
-      onLogin(true);
+      onLogin(true, true); // Pass true for isAdmin
       localStorage.setItem('currentUser', JSON.stringify(adminCredentials)); // Store admin in localStorage
       navigate('/admin'); // Redirect admin to admin dashboard
     } else {
       // For regular users, accept any username and password
       setMessage('User login successful!');
       const user = { username, password, role: 'user' };
-      onLogin(true);
+      onLogin(true, false); // Pass false for isAdmin
       localStorage.setItem('currentUser', JSON.stringify(user)); // Store current user in localStorage
       navigate('/user'); // Redirect user to user page
     }

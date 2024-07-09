@@ -1,0 +1,38 @@
+.home-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 8px;
+    min-height: 50vh;
+    background-color: #f0f2f5;
+}
+
+.navbar {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.counting-box {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+}
+
+.counting-box h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #343a40;
+}
+
+.counting-box p {
+    font-size: 36px;
+    margin: 0;
+    color: #007bff;
+}

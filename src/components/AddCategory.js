@@ -1,4 +1,3 @@
-// AddCategory.js
 import React from 'react';
 
 function AddCategory() {
@@ -6,7 +5,7 @@ function AddCategory() {
     <div>
       <h2>Add Category</h2>
       <form>
-        {/* Add your form fields here */}
+        
       </form>
     </div>
   );
