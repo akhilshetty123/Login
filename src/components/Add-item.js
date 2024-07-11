@@ -5,6 +5,7 @@ import './Add-item.css';
 function AddItem({ items = [], addItem, updateItem, currentItem, onLogout }) {
   const [productName, setProductName] = useState('');
   const [price, setPrice] = useState('');
+  const [image, setImage] = useState(null);
   const [message, setMessage] = useState('');
   const [isEditing, setIsEditing] = useState(false);
   const navigate = useNavigate();
@@ -25,9 +26,10 @@ function AddItem({ items = [], addItem, updateItem, currentItem, onLogout }) {
     }
 
     const newItem = {
-      id: (items ? items.length : 0) + 1, 
+      id: (items ? items.length : 0) + 1,
       productName,
       price: parseFloat(price),
+      image,
     };
     addItem(newItem);
     resetForm();
@@ -45,15 +47,21 @@ function AddItem({ items = [], addItem, updateItem, currentItem, onLogout }) {
       ...currentItem,
       productName,
       price: parseFloat(price),
+      image: image || currentItem.image,
     };
     updateItem(updatedItem);
     resetForm();
     setMessage('Item updated successfully!');
   };
 
+  const handleImageChange = (e) => {
+    setImage(URL.createObjectURL(e.target.files[0]));
+  };
+
   const resetForm = () => {
     setProductName('');
     setPrice('');
+    setImage(null);
     setIsEditing(false);
     setMessage('');
   };
@@ -67,7 +75,7 @@ function AddItem({ items = [], addItem, updateItem, currentItem, onLogout }) {
   return (
     <div className="dashboard-container">
       <nav className="navbar">
-        <img src="/images/loginnnn.jpg" alt="Dashboard" className="navbar-icon" />
+        <img src="/images/log.png" alt="Dashboard" className="navbar-icon" />
         <div className="navbar-left">
           <ul className="navbar-items">
             <li><Link to="/admin">Home</Link></li>
@@ -81,7 +89,6 @@ function AddItem({ items = [], addItem, updateItem, currentItem, onLogout }) {
         </div>
       </nav>
 
-      
       <div className="content">
         <h2>{isEditing ? 'Edit Item' : 'Add Item'}</h2>
         <form onSubmit={isEditing ? handleUpdateItem : handleAddItem}>
@@ -95,7 +102,7 @@ function AddItem({ items = [], addItem, updateItem, currentItem, onLogout }) {
               className="form-control"
               placeholder="Enter product name"
               required
-              disabled={isEditing} 
+              disabled={isEditing}
             />
           </div>
           <div className="form-group">
@@ -110,6 +117,20 @@ function AddItem({ items = [], addItem, updateItem, currentItem, onLogout }) {
               required
             />
           </div>
+          <div className="form-group">
+            <label htmlFor="image">Image:</label>
+            
+              <input
+                type="file"
+                id="image"
+                onChange={handleImageChange}
+                className="form-cntrl"
+                accept="image/*"
+              />
+              
+            </div>
+            {image && <img src={image} alt="Preview" className="image-preview" />}
+          
           <button type="submit" className="btn-add">{isEditing ? 'Update Item' : 'Add Item'}</button>
           {isEditing && <button onClick={resetForm} className="btn-cancel">Cancel</button>}
         </form>

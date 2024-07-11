@@ -4,11 +4,11 @@
     align-items: center;
     border-radius: 8px;
     min-height: 50vh;
-    background-color: #f0f2f5;
+    background: linear-gradient(to top, #c72092, #6c14d0);
+    ;
 }
 
 .navbar {
-    background-color: black;
     color: white;
     display: flex;
     justify-content: space-between;

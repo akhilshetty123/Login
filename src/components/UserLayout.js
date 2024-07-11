@@ -1,26 +1,29 @@
 import React from 'react';
 import { Link, Routes, Route, useNavigate } from 'react-router-dom';
 import ViewCategory from './ViewCategory';
-import ViewItems from './ViewItems';
+import ViewItems from './View-items';
 import './UserLayout.css';
-// import backgroundImage from '../assets/user.jpg'; // Import the image
+import Userhome from './Userhome';
+import MyOrders from './MyOrders';
 
-function UserLayout({ onLogout, items }) {
+function UserLayout({ onLogout, items, placeOrder, orders, currentUser }) {
   const navigate = useNavigate();
 
   const handleLogout = () => {
+    localStorage.removeItem('CurrentUser');
     onLogout();
     navigate('/');
   };
 
   return (
-    <div className="user-layout" >
+    <div className="user-layout">
       <nav className="navbar">
-        <img src="/images/loginnnn.jpg" alt="Dashboard" className="navbar-icon" />
+        <img src="/images/log.png" alt="Dashboard" className="navbar-icon" />
         <div className="navbar-left">
           <ul className="navbar-items">
-            <li><Link to="/user/view-items">View items</Link></li>
-            <li><Link to="/user/view-category">View categories</Link></li>
+            <li><Link to="/user">Home</Link></li>
+            <li><Link to="/view-items">View-Items</Link></li>
+            <li><Link to="/MyOrders">My-Orders</Link></li>
           </ul>
         </div>
         <div className="navbar-right">
@@ -29,8 +32,10 @@ function UserLayout({ onLogout, items }) {
       </nav>
       <div className="user-content">
         <Routes>
-          <Route path="view-category" element={<ViewCategory />} />
-          <Route path="view-items" element={<ViewItems items={items} isAdmin={false} />} />
+          <Route path="/" element={<Userhome />} />
+          <Route path="/view-items" element={<ViewItems items={items} isAdmin={false} placeOrder={placeOrder} />} />
+          <Route path="/MyOrders" element={<MyOrders orders={orders} currentUser={currentUser} />} />
+          <Route path="/ViewCategory" element={<ViewCategory />} />
         </Routes>
       </div>
     </div>

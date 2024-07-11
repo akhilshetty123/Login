@@ -5,7 +5,7 @@ import ViewItems from './View-items';
 import ViewOrders from './ViewOrders';
 import Home from './Home';
 import './AdminLayout.css';
-import backgroundImage from '../assets/adm.jpg';
+
 
 function AdminLayout({ onLogout, items, addItem, setItems, orders }) {
   const navigate = useNavigate();
@@ -17,9 +17,9 @@ function AdminLayout({ onLogout, items, addItem, setItems, orders }) {
   };
 
   return (
-    <div className="admin-layout" style={{ backgroundImage: `url(${backgroundImage})`, backgroundColor: 'white' }}>
+    <div className="admin-layout" style={{  backgroundColor: '' }}>
       <nav className="navbar">
-        <img src="/images/loginnnn.jpg" alt="Dashboard" className="navbar-icon" />
+        <img src="/images/log.png" alt="Dashboard" className="navbar-icon" />
         <div className="navbar-left">
           <ul className="navbar-items">
             <li><Link to="/admin">Home</Link></li>

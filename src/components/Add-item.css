@@ -1,10 +1,6 @@
 .dashboard-container {
-    background-color: lightslategray;
-    /* padding: 100px 0px 0px 500px; */
+    background-color: rgb(143, 244, 143);
     border-radius: 8px;
-    color: white;
-    /* display: flex; */
-    /* justify-content: top; */
     align-items: center;
     height: 100vh;
 }
@@ -19,10 +15,6 @@
     max-width: 500px;
 }
 
-.navbar-items li {
-    /* margin-left: 200px; */
-}
-
 h2 {
     color: black;
 }
@@ -31,7 +23,6 @@ h2 {
     list-style: none;
     padding: 0;
     margin: 10px;
-    /* display: flex; */
     margin-left: 1800px;
 }
 
@@ -47,6 +38,12 @@ h2 {
 .form-group {
     margin-bottom: 15px;
     text-align: left;
+}
+
+.image-preview {
+    margin-top: 10px;
+    max-width: 100px;
+    max-height: 100px;
 }
 
 .form-group label {
@@ -100,4 +97,17 @@ h2 {
 
 .items-table th {
     background-color: #e9ecef;
+}
+
+.form-cntrl {
+    width: 100%;
+    margin: 0px 0px 0px -10px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: rgb(143, 141, 141);
+    border: 1px solid #ced4da;
+}
+
+.image-preview {
+    padding-right: 0px;
 }

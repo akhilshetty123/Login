@@ -1,33 +1,29 @@
-// Login.js
-
 import React, { useState } from 'react';
 import './Login.css'; 
-import { useNavigate } from 'react-router-dom'; // Import useNavigate hook from react-router-dom
-import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Import icons from react-icons library
-import backgroundImage from '../assets/hero.jpg';
+import { useNavigate } from 'react-router-dom';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 function Login({ onLogin }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
-  const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
-  const navigate = useNavigate(); // Initialize useNavigate hook
+  const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const handleLogin = () => {
     const adminCredentials = { username: 'admin', password: '123', role: 'admin' };
 
     if (username === adminCredentials.username && password === adminCredentials.password) {
       setMessage('Admin login successful!');
-      onLogin(true, true); // Pass true for isAdmin
-      localStorage.setItem('currentUser', JSON.stringify(adminCredentials)); // Store admin in localStorage
-      navigate('/admin'); // Redirect admin to admin dashboard
+      onLogin(true, true); 
+      localStorage.setItem('currentUser', JSON.stringify(adminCredentials));
+      navigate('/admin');
     } else {
-      // For regular users, accept any username and password
       setMessage('User login successful!');
       const user = { username, password, role: 'user' };
-      onLogin(true, false); // Pass false for isAdmin
-      localStorage.setItem('currentUser', JSON.stringify(user)); // Store current user in localStorage
-      navigate('/user'); // Redirect user to user page
+      onLogin(true, false); 
+      localStorage.setItem('currentUser', JSON.stringify(user));
+      navigate('/user');
     }
   };
 

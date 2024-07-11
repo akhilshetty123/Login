@@ -8,10 +8,10 @@
 
 .login-header {
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 40px;
     border-radius: 8px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.9);
     width: 300px;
     height: 290px;
 }
@@ -57,7 +57,6 @@ label {
     border-radius: 4px;
     transition: background-color 0.3s ease;
     width: 50%;
-    /* max-width: 100%; */
 }
 
 .btn-login:hover {
@@ -73,7 +72,6 @@ label {
 
 .password-input {
     position: relative;
-    /* width: 93%; */
 }
 
 .password-input .form-control {

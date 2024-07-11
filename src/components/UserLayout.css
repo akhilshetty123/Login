@@ -2,7 +2,6 @@
         display: flex;
         flex-direction: column;
         height: 100vh;
-        background-color: white;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -26,7 +25,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: black;
         padding: 10px 20px;
     }
     
@@ -42,11 +40,10 @@
     }
     
     .navbar-items li {
-        margin-right: 20px;
+        margin-right: 500px;
     }
     
     .navbar-items li a {
-        color: white;
         text-decoration: none;
         font-size: 16px;
     }
@@ -71,6 +68,6 @@
     
     .user-content {
         flex: 1;
-        background-color: lightsteelblue;
+        background-color: rgb(192, 250, 192);
         padding: 20px;
     }
