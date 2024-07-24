@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './View-items.css';
 import OrderModal from './OrderModal';
+// import OrderModal from './OrderModal';
 
 function ViewItems({ items, setItems, isAdmin, onLogout, placeOrder }) {
   const [editIndex, setEditIndex] = useState(-1);
