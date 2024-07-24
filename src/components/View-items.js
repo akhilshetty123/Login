@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './View-items.css';
+import OrderModal from './OrderModal';
 
 function ViewItems({ items, setItems, isAdmin, onLogout, placeOrder }) {
   const [editIndex, setEditIndex] = useState(-1);
   const [editPrice, setEditPrice] = useState('');
   const [editName, setEditName] = useState('');
   const [editImage, setEditImage] = useState(null);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
   const navigate = useNavigate();
 
   const handleEditClick = (index, price, name, image) => {
@@ -42,14 +45,13 @@ function ViewItems({ items, setItems, isAdmin, onLogout, placeOrder }) {
   };
 
   const handleOrderClick = (item) => {
-    const quantity = parseInt(prompt(`Enter quantity for ${item.productName}:`), 10);
-    if (quantity && quantity > 0) {
-      placeOrder({ ...item, quantity, username: localStorage.getItem('currentUser') });
-      alert(`Order placed for ${item.productName} - Quantity: ${quantity}`);
-      navigate('/view-items');
-    } else {
-      alert('Invalid quantity entered.');
-    }
+    setSelectedItem(item);
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+    setSelectedItem(null);
   };
 
   const handleImageChange = (e, index) => {
@@ -73,8 +75,7 @@ function ViewItems({ items, setItems, isAdmin, onLogout, placeOrder }) {
               <>
                 <li><Link to="/user">Home</Link></li>
                 <li><Link to="/view-items">View-Items</Link></li>
-                
-      <li><Link to="/MyOrders">My-Orders</Link></li>
+                <li><Link to="/MyOrders">My-Orders</Link></li>
               </>
             )}
             {isAdmin && (
@@ -114,12 +115,6 @@ function ViewItems({ items, setItems, isAdmin, onLogout, placeOrder }) {
                 <td>
                   {editIndex === index ? (
                     <div>
-                      {/* <input
-                        type="file"
-                        onChange={(e) => handleImageChange(e, index)}
-                        className="custom-file-input"
-                        accept="image/*"
-                      /> */}
                       {editImage && <img src={editImage} alt="Preview" className="image-preview" />}
                     </div>
                   ) : (
@@ -170,6 +165,14 @@ function ViewItems({ items, setItems, isAdmin, onLogout, placeOrder }) {
           </tbody>
         </table>
       </div>
+      {selectedItem && (
+        <OrderModal
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          item={selectedItem}
+          placeOrder={placeOrder}
+        />
+      )}
     </div>
   );
 }
