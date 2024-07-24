@@ -5,7 +5,7 @@ import Login from './components/Login';
 import AdminLayout from './components/AdminLayout';
 import UserLayout from './components/UserLayout';
 import Dashboard from './components/Add-item';
-import AddItem from './components/Add-item';
+import AddItem from './components/Add-item';                  
 import ViewItems from './components/View-items';
 import Home from './components/Home';
 import NotFound from './components/NotFound';
